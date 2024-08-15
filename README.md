@@ -1,3 +1,26 @@
+## Development
+
+- [ ] `/{repo_owner}/{repo_name}/{_kind:blob|tree|raw|blame|commits}/{branch:.+}/.github/workflows/{workflow:[^/]+\\.ya?ml}`
+- [ ] `/{repo_owner}/{repo_name}/actions/runs/{run_id:[0-9]+}`
+- [ ] `/{repo_owner}/{repo_name}/runs/{job_id:[0-9]+}`
+- [ ] `/{repo_owner}/{repo_name}/suites/{check_suite_id:[0-9]+}/artifacts/{artifact_id:[0-9]+}`
+- [ ] `/{repo_owner}/{repo_name}/commit/{commit:[0-9a-fA-F]{40}}/checks/{job_id:[0-9]+}/logs`
+- [ ] `/`
+- [ ] `/dashboard`
+- [ ] `/setup`
+- [ ] `/{repo_owner}/{repo_name}/workflows/{workflow}/{branch}`
+- [ ] `/{repo_owner}/{repo_name}/actions/runs/{run_id:[0-9]+}`
+- [ ] `/{repo_owner}/{repo_name}/workflows/{workflow}/{branch}/{artifact}{zip:\\.zip}`
+- [ ] `/{repo_owner}/{repo_name}/workflows/{workflow}/{branch}/{artifact}`
+- [ ] `/{repo_owner}/{repo_name}/actions/runs/{run_id:[0-9]+}/{artifact}{zip:\\.zip}`
+- [ ] `/{repo_owner}/{repo_name}/actions/runs/{run_id:[0-9]+}/{artifact}`
+- [ ] `/{repo_owner}/{repo_name}/actions/artifacts/{artifact_id:[0-9]+}{zip:\\.zip}`
+- [ ] `/{repo_owner}/{repo_name}/actions/artifacts/{artifact_id:[0-9]+}`
+- [ ] `/{repo_owner}/{repo_name}/runs/{job_id:[0-9]+}{txt:\\.txt}`
+- [ ] `/{repo_owner}/{repo_name}/runs/{job_id:[0-9]+}`
+
+---
+
 <h1>nightly.link <img src="logo.svg" alt="" height="24" style="height: 34px; vertical-align: sub"> for GitHub
 <a href="https://github.com/oprypin/nightly.link"><img src="https://img.shields.io/github/stars/oprypin/nightly.link?style=social" alt="" style="float: right; height: 30px; margin-top: 10px"></a>
 </h1>
