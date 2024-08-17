@@ -19,6 +19,23 @@
 - [ ] `/{repo_owner}/{repo_name}/runs/{job_id:[0-9]+}{txt:\\.txt}`
 - [ ] `/{repo_owner}/{repo_name}/runs/{job_id:[0-9]+}`
 
+Relevant GitHub conventions for API URL design and appropriate redirects & aliasing:
+
+- Page showing a specific workflow's runs: https://github.com/jcbhmr/bikeshed/actions/workflows/ci.yml
+- Badge URL with custom branch and filtered event: https://github.com/jcbhmr/bikeshed/actions/workflows/ci.yml/badge.svg?branch=patch-1&event=push
+- A particular workflow with summary & artifacts: https://github.com/jcbhmr/bikeshed/actions/runs/10346657797
+- Download link for a specific artifact: https://github.com/jcbhmr/bikeshed/actions/runs/10346657797/artifacts/1800448916
+- Specific job in a run (no artifacts): https://github.com/jcbhmr/bikeshed/actions/runs/10346657797/job/28635689146
+- Download log archive of a workflow run: https://github.com/jcbhmr/bikeshed/suites/27058653543/logs?attempt=1
+- View logs for a particular job: https://github.com/jcbhmr/bikeshed/commit/dea4e0b446d547c01d54a6c4b5db2dad6d547bf6/checks/28635689146/logs
+- GitHub code view of workflow file: https://github.com/jcbhmr/bikeshed/blob/main/.github/workflows/ci.yml
+- Download artifacts by name: `gh run download <run-id> --name <name1> --name <name2>`
+- Download artifacts via glob: `gh run download <run-id> --pattern <pattern1> --pattern <pattern2>`
+- Download specific release artifact: https://github.com/jcbhmr/bikeshed/releases/download/v4.1.12/bikeshed-ape-4.1.12.zip
+- Download latest release artifact: https://github.com/jcbhmr/bikeshed/releases/latest/download/bikeshed-ape-4.1.12.zip
+- Download file in Git tree: https://raw.githubusercontent.com/jcbhmr/bikeshed/v4.1.12/bikeshed-ape.cpp
+- Filter workflows by attributes: https://github.com/jcbhmr/bikeshed/actions/workflows/ci.yml?query=actor%3Ajcbhmr
+
 ---
 
 <h1>nightly.link <img src="logo.svg" alt="" height="24" style="height: 34px; vertical-align: sub"> for GitHub
@@ -39,9 +56,9 @@ If you'll be publishing a link to your own repository's artifacts, please instal
 
 ## The issue
 
-GitHub has no direct way to directly link to the *latest* build from GitHub actions of a given repository.
+GitHub has no direct way to directly link to the _latest_ build from GitHub actions of a given repository.
 
-Even if you *do* have a link to an artifact, using it requires the visitor to be logged into the GitHub website.
+Even if you _do_ have a link to an artifact, using it requires the visitor to be logged into the GitHub website.
 
 The discussion originates at [actions/upload-artifact "Artifact download URL only work for registered users"](https://github.com/actions/upload-artifact/issues/51).
 
@@ -55,10 +72,10 @@ Because GitHub doesn't provide any permanent and public links to an artifact, th
 
 This GitHub App requests these permissions:
 
-> * **Actions**: Workflows, workflow runs and artifacts.
->     * Access: **Read-only**
-> * **Metadata** [mandatory]: Search repositories, list collaborators, and access repository metadata.
->     * Access: **Read-only**
+> - **Actions**: Workflows, workflow runs and artifacts.
+>   - Access: **Read-only**
+> - **Metadata** [mandatory]: Search repositories, list collaborators, and access repository metadata.
+>   - Access: **Read-only**
 
 [installations]: https://github.com/settings/installations
 
@@ -68,11 +85,11 @@ Interestingly, the prompt that GitHub presents to you when authenticating to the
 
 > **nightly.link by [Oleh Prypin](https://github.com/oprypin) would like permission to:**
 >
-> * Verify your GitHub identity (*$username*)
-> * Know which resources you can access
-> * Act on your behalf
+> - Verify your GitHub identity (_$username_)
+> - Know which resources you can access
+> - Act on your behalf
 
-In reality, this blurb is *completely generic* and will be shown for any GitHub App authorization regardless of its permissions. [This is discussed here.](https://github.community/t/why-does-this-forum-need-permission-to-act-on-my-behalf/120453)
+In reality, this blurb is _completely generic_ and will be shown for any GitHub App authorization regardless of its permissions. [This is discussed here.](https://github.community/t/why-does-this-forum-need-permission-to-act-on-my-behalf/120453)
 
 Furthermore, the permissions that the app asks for are granted even if it's just "installed", without being "authorized".
 
@@ -86,9 +103,9 @@ Feel free to [revoke][authorizations] this part (but keep the [install][installa
 
 An exhaustive list of what this service stores:
 
-* Server-side:
-    * Full repository names that you gave access to.
-* Client-side: nothing.
+- Server-side:
+  - Full repository names that you gave access to.
+- Client-side: nothing.
 
 The server of the main instance also keeps access logs and application logs for up to 3 months.
 

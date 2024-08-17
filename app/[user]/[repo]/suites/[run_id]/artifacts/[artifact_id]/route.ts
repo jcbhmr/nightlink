@@ -1,14 +1,14 @@
 import { NextResponse, NextRequest } from "next/server";
-import { redirect } from 'next/navigation';
+import { redirect } from "next/navigation";
 
 export async function OPTIONS(request: NextRequest) {
   return new Response(null, {
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization"
-    }
-  })
+      "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    },
+  });
 }
 
 export async function GET(request: NextRequest, { params }: { params: {} }) {
@@ -16,7 +16,7 @@ export async function GET(request: NextRequest, { params }: { params: {} }) {
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization"
-    }
-  })
+      "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    },
+  });
 }
