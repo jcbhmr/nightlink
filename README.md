@@ -4,18 +4,12 @@
 
 <p align=center>TODO: image</p>
 
-## Installation
-
-_You probably want to use @jcbhmr's hosted instance at https://nightlink.jcbhmr.com/_
-
-Click this button:
-
-TODO: https://vercel.com/docs/deployments/deploy-button#generate-your-own
-
 ## Usage
 
+**Examples:**
+
 ```
-<instance_base_url>/<user>/<repo>/<branch>/<workflow_file_basename>/<artifact_name>
+https://nightlink.jcbhmr.com/jcbhmr/nightlink/hello-world.yml/main/message.zip
 ```
 
 ## Development

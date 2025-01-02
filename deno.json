@@ -1,0 +1,7 @@
+{
+    "imports": {
+        "hono": "npm:hono@^4.6.15",
+        "zod": "npm:zod@^3.24.1",
+        "octokit": "npm:octokit@^4.0.3"
+    }
+}
