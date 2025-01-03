@@ -1,7 +1,14 @@
 {
-    "imports": {
-        "hono": "npm:hono@^4.6.15",
-        "zod": "npm:zod@^3.24.1",
-        "octokit": "npm:octokit@^4.0.3"
-    }
+  "imports": {
+    "@hono/zod-validator": "npm:@hono/zod-validator@^0.4.2",
+    "@octokit/core": "npm:@octokit/core@^6.1.2",
+    "@octokit/plugin-request-log": "npm:@octokit/plugin-request-log@^5.3.1",
+    "@octokit/plugin-throttling": "npm:@octokit/plugin-throttling@^9.3.2",
+    "@octokit/request-error": "npm:@octokit/request-error@^6.1.6",
+    "hono": "npm:hono@^4.6.15",
+    "ratelimit-header-parser": "npm:ratelimit-header-parser@^0.1.0",
+    "zod": "npm:zod@^3.24.1",
+    "octokit": "npm:octokit@^4.0.3",
+    "zod-validation-error": "npm:zod-validation-error@^3.4.0"
+  }
 }
