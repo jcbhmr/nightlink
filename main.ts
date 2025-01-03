@@ -12,22 +12,25 @@ import { fromZodError } from 'zod-validation-error';
 import { requestLog } from "@octokit/plugin-request-log";
 import { ratelimitLog } from "./octokit-plugin-ratelimit-log.ts";
 
-const env = z.object({
+const envResult = z.object({
   NIGHTLINK_GITHUB_TOKEN: z.union([
     z.string().regex(/^ghp_[a-zA-Z0-9]{36}$/),
     z.string().regex(/^github_pat_[a-zA-Z0-9]{22}_[a-zA-Z0-9]{59}$/),
   ]),
   NIGHTLINK_GITHUB_API_URL: z.optional(z.string().url()),
-}).parse(process.env);
+}).safeParse(process.env);
+if (!envResult.success) {
+  throw fromZodError(envResult.error);
+}
 
-if (env.NIGHTLINK_GITHUB_API_URL != null) {
-  console.log("Using %s as GitHub API URL", env.NIGHTLINK_GITHUB_API_URL);
+if (envResult.data.NIGHTLINK_GITHUB_API_URL != null) {
+  console.log("Using %s as GitHub API URL", envResult.data.NIGHTLINK_GITHUB_API_URL);
 }
 
 const MyOctokit = Octokit.plugin(throttling, requestLog, ratelimitLog);
 const octokit = new MyOctokit({
-  auth: env.NIGHTLINK_GITHUB_TOKEN,
-  baseUrl: env.NIGHTLINK_GITHUB_API_URL,
+  auth: envResult.data.NIGHTLINK_GITHUB_TOKEN,
+  baseUrl: envResult.data.NIGHTLINK_GITHUB_API_URL,
   log: {
     debug: () => {},
     info: console.info,
