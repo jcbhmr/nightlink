@@ -1,4 +1,3 @@
-- [ ] canonical url
 - [ ] next.js for pretty homepage
 - [ ] @[Retour::Get("/{repo_owner}/{repo_name}/{_kind:blob|tree|raw|blame|commits}/{branch:.+}/.github/workflows/{workflow:[^/]+\\.ya?ml}")]
 - [ ] @[Retour::Get("/{repo_owner}/{repo_name}/actions/runs/{run_id:[0-9]+}")]
@@ -18,7 +17,6 @@
 - [ ] @[Retour::Get("/{repo_owner}/{repo_name}/actions/artifacts/{artifact_id:[0-9]+}")]
 - [ ] @[Retour::Get("/{repo_owner}/{repo_name}/runs/{job_id:[0-9]+}{txt:\\.txt}")]
 - [ ] @[Retour::Get("/{repo_owner}/{repo_name}/runs/{job_id:[0-9]+}")]
-- [ ] @[Retour::Get({{"/#{path.id}"}})]
 - [ ] get really aggressive with caching
 - [ ] maybe support multiple pats similar to how ungh.cc
 - [ ] expose rate limit in returned headers
@@ -27,7 +25,10 @@
 - [ ] support "gimme a pat" too?
 - [ ] nightly.link fork
 - [ ] host on vercel?
-- [ ] DO NOT require gh app installation to use
 - [ ] support private repos via gh app/oauth/pat to that user's private repos if they choose
-- [ ] use vercel db
+- [ ] use vercel db to store install tokens and such
 - [ ] state changes for agpl
+- [ ] try to use personal token with possible token pool https://github.com/unjs/ungh/issues/5 -- this should be the primary way to do it for public repos; then for private repos you obv need that user's install app + token.
+
+badge image URL: https://github.com/jcbhmr/nightly.link/actions/workflows/upload-artifact.yml/badge.svg?branch=main
+whatif: https://github.com/jcbhmr/nightly.link/actions/workflows/upload-artifact.yml/artifacts/my-artifact.zip?branch=main
